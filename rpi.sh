@@ -67,7 +67,9 @@ mkDiskImage() {
 		a
 		1
 		w
-	EOI
+		q
+EOI
+	read foo
 	part1Offset=$(fdisk -l ${WD}/${IMG} | grep FAT32 | awk '{print $3}')
 	part2Offset=$(fdisk -l ${WD}/${IMG} | grep Linux | awk '{print $2}')
 	
