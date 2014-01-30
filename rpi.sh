@@ -21,3 +21,6 @@ echo -e '@BOOT@\t/boot\tvfat\tdefaults\t0\t0' >> /tmp/rpi/etc/fstab
 echo 'ipv6.disable=1 avoid_safe_mode=1 selinux=0 plymouth.enable=0 smsc95xx.turbo_mode=N dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=@ROOT@ rootfstype=ext4 elevator=noop rootwait' > /tmp/rpi/boot/cmdline.txt
 
 sed -ie 's@^\(root:\)\*\(.*\)@\1$6$sWmzkD4k$c0mMp/uShHALAPSnYyECig8FxOMUQZ7nf2uUPF/xj2iCD13qDpEE69V.8MuqkGW27i7gQNQ8neDhUDizTfcCb0\2@g;' /tmp/rpi/etc/shadow
+
+cp /tmp/rpi/usr/share/zoneinfo/Europe/Berlin /tmp/rpi/etc/localtime
+echo 'Europe/Berlin' > /tmp/rpi/etc/timezone
